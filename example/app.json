@@ -4,6 +4,7 @@
     "slug": "example",
     "version": "1.0.0",
     "orientation": "portrait",
+    "scheme": "exampleApp",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -21,7 +22,9 @@
       }
     },
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": ["expo-router"]
   }
 }

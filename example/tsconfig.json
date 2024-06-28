@@ -1,6 +1,7 @@
 {
   "extends": "../tsconfig",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true
     // Avoid expo-cli auto-generating a tsconfig
   }
 }
