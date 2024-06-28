@@ -1,32 +1,26 @@
-import * as React from 'react';
+import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import {
   View,
   Text,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
+  TextInput,
 } from 'react-native';
-
+// import { TextInput } from 'react-native-gesture-handler';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BlurView } from 'expo-blur';
-// import { Link } from 'expo-router';
-import Colors from './Constants/Colors';
+import { Link } from 'expo-router';
+import Colors from '../Constants/Colors';
 
-type propTypes = {
-  insetTop?: number;
-  inputIconName?: string;
-};
-
-const CustomHeader = ({ insetTop, inputIconName }: propTypes) => {
-  // const { top } = useSafeAreaInsets();
+const Header = () => {
+  const { top } = useSafeAreaInsets();
 
   return (
-    // <GestureHandlerRootView>
-
     <BlurView
       intensity={80}
       tint={'systemMaterialDark'}
-      style={{ paddingTop: insetTop || 0 }}
+      style={{ paddingTop: top }}
     >
       <View
         style={[
@@ -39,26 +33,26 @@ const CustomHeader = ({ insetTop, inputIconName }: propTypes) => {
           },
         ]}
       >
-        {/* <Link href={'/(authenticated)/(modals)/account'} asChild> */}
-        <TouchableOpacity
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 20,
-            backgroundColor: Colors.gray,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Text style={{ color: '#fff', fontWeight: '500', fontSize: 16 }}>
-            HA
-          </Text>
-        </TouchableOpacity>
-        {/* </Link> */}
+        <Link href={'/(authenticated)/(modals)/account'} asChild>
+          <TouchableOpacity
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 20,
+              backgroundColor: Colors.gray,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Text style={{ color: '#fff', fontWeight: '500', fontSize: 16 }}>
+              HA
+            </Text>
+          </TouchableOpacity>
+        </Link>
         <View style={styles.searchSection}>
           <Ionicons
             style={styles.searchIcon}
-            name={'search' || inputIconName}
+            name="search"
             size={20}
             color={Colors.dark}
           />
@@ -76,8 +70,6 @@ const CustomHeader = ({ insetTop, inputIconName }: propTypes) => {
         </View>
       </View>
     </BlurView>
-
-    // </GestureHandlerRootView>
   );
 };
 
@@ -121,4 +113,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-export { CustomHeader };
+export default Header;

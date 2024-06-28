@@ -5,6 +5,7 @@
       "rn-headers": ["./src/index"]
     },
     "allowUnreachableCode": false,
+    "allowSyntheticDefaultImports": true,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -17,7 +18,7 @@
     "noImplicitUseStrict": false,
     "noStrictGenericChecks": false,
     "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
